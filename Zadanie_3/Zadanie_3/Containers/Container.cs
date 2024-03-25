@@ -26,12 +26,20 @@ public abstract class Container : IContainer
 
     public void Unload()
     {
-        throw new NotImplementedException();
+        if (CargoWeight == 0)
+        {
+            throw new NotImplementedException();
+        }
+        CargoWeight = 0;
     }
 
-    public virtual void Load(double cargoWeight)
+    public virtual void Load(double LCargoWeight)
     {
-        CargoWeight = cargoWeight;
-        throw new OverfillException();
+        CargoWeight += LCargoWeight;
+        if (CargoWeight > MaxCargo)
+        {
+            CargoWeight -= LCargoWeight;
+            throw new OverfillException();
+        }
     }
 }
