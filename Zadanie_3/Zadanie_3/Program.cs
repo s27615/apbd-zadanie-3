@@ -8,6 +8,14 @@ using Zadanie_3.Containers;
 //     };
 // container.CargoWeight = 10.0;
 
+Container c = new GasContainer(2.5, 90, 34, 4, 5);
+Container c1 = new GasContainer(2.5, 90, 34, 4, 5);
+Container c2 = new GasContainer(2.5, 90, 34, 4, 5);
+Console.WriteLine(c.NumberSer);
+Console.WriteLine(c1.NumberSer);
+Console.WriteLine(c2.NumberSer);
+
+
 int? a = 1;
 a = null;
 

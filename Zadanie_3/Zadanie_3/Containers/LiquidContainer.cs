@@ -2,7 +2,7 @@
 
 public class LiquidContainer : Container
 {
-    public LiquidContainer(double cargoWeight, double height) : base(cargoWeight, height)
+    public LiquidContainer(double cargoWeight, double height, double weight, double depth, double max) : base(cargoWeight, height, weight, depth, max)
     {
         
     }
