@@ -7,8 +7,8 @@ public class GasContainer : Container
         NumberSer += "-G-" + Id;
     }
     
-    public override void Load(double cargoWeight)
+    public override void Load(PossibleProducts product, double cargoWeight)
     {
-        base.Load(cargoWeight);
+        base.Load(product, cargoWeight);
     }
 }

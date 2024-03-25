@@ -9,9 +9,22 @@ public class LiquidContainer : Container, IHazardNotifier
         NumberSer += "-L-" + Id;
     }
     
-    public override void Load(double cargoWeight)
+    public override void Load(PossibleProducts product, double cargoWeight)
     {
-        base.Load(cargoWeight);
+        if (product == PossibleProducts.fuel)
+        {
+            MaxCargo /= 2;
+            Console.Write("Wykryto niebezpieczną substancją. Maksymalna pojemność kontenera zostala zmniejszona o połowę.");
+        }
+        else
+        {
+            MaxCargo = 0.9 * MaxCargo;
+        }
+        base.Load(product, cargoWeight);
+        if (cargoWeight > MaxCargo)
+        {
+            Notification(this);
+        }
     }
 
     public void Notification(Container container)

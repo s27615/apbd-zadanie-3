@@ -33,12 +33,12 @@ public abstract class Container : IContainer
         CargoWeight = 0;
     }
 
-    public virtual void Load(double LCargoWeight)
+    public virtual void Load(PossibleProducts product, double LCargoWeight)
     {
         CargoWeight += LCargoWeight;
         if (CargoWeight > MaxCargo)
         {
-            CargoWeight -= LCargoWeight;
+            //CargoWeight -= LCargoWeight;
             throw new OverfillException();
         }
     }
