@@ -31,6 +31,7 @@ public abstract class Container : IContainer
             throw new NotImplementedException();
         }
         CargoWeight = 0;
+        Console.WriteLine("Kontener rozładowano");
     }
 
     public virtual void Load(PossibleProducts product, double LCargoWeight)
@@ -41,5 +42,15 @@ public abstract class Container : IContainer
             //CargoWeight -= LCargoWeight;
             throw new OverfillException();
         }
+        Console.WriteLine("Kontener załadowano");
+    }
+
+    public virtual void show()
+    {
+        Console.WriteLine("Numer seryjny: " + NumberSer);
+        Console.WriteLine("Cargo weight: " + CargoWeight);
+        Console.WriteLine("Weight: " + Weight);
+        Console.WriteLine("Height: " + Height);
+        Console.WriteLine("Depth: " + Depth);
     }
 }

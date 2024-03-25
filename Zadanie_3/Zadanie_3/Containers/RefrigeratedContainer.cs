@@ -15,6 +15,7 @@ public class RefrigeratedContainer : Container
         Temperature = temperature;
         NumberSer += "-R-" + Id;
         ProductType = product;
+        Console.WriteLine("Utworzono kontener " + NumberSer);
     } 
     private bool IsTemperatureValidForProductType(double temperature, PossibleProducts productType)
     {
@@ -35,5 +36,11 @@ public class RefrigeratedContainer : Container
             default:
                 return true;
         }
+    }
+    public virtual void show()
+    {
+        base.show();
+        Console.WriteLine("Przewożone produkty: " + ProductType);
+        Console.WriteLine("Temperatura: " + Temperature);
     }
 }

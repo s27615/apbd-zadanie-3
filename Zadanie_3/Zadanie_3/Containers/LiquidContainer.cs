@@ -7,6 +7,7 @@ public class LiquidContainer : Container, IHazardNotifier
     public LiquidContainer(double cargoWeight, double height, double weight, double depth, double max) : base(cargoWeight, height, weight, depth, max)
     {
         NumberSer += "-L-" + Id;
+        Console.WriteLine("Utworzono kontener " + NumberSer);
     }
     
     public override void Load(PossibleProducts product, double cargoWeight)
@@ -25,6 +26,7 @@ public class LiquidContainer : Container, IHazardNotifier
         {
             Notification(this);
         }
+        Console.WriteLine("Kontener załadowano");
     }
 
     public void Notification(Container container)
