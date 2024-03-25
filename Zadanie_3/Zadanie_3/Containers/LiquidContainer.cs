@@ -7,9 +7,7 @@ public class LiquidContainer : Container
         
     }
     
-    //virtual to javowy override, przeciagniecie
-    
-    public virtual void Load(double cargoWeight)
+    public override void Load(double cargoWeight)
     {
         base.Load(cargoWeight);
     }
