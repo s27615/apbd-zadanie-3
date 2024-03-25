@@ -11,7 +11,7 @@ public class LiquidContainer : Container, IHazardNotifier
     
     public override void Load(PossibleProducts product, double cargoWeight)
     {
-        if (product == PossibleProducts.fuel)
+        if (product == PossibleProducts.Fuel)
         {
             MaxCargo /= 2;
             Console.Write("Wykryto niebezpieczną substancją. Maksymalna pojemność kontenera zostala zmniejszona o połowę.");
